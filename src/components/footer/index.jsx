@@ -7,6 +7,8 @@ import { menuListMobile } from '../header/headerData';
 import { Container10, Container100, Container1140, Container1200, Container1320, Container1400, Container1440 } from '../shared/CustomContainer';
 import { useStyles } from './footer.style';
 import { ProductsLinks } from './footerData';
+import Whatsapp from '../shared/WhatsApp';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 
 const Footer = () => {
@@ -54,6 +56,12 @@ const Footer = () => {
                                 )}
                             </Box>
                         </Box>
+                        <Box className="mb-5">
+                            <TitleHead title="Connect with us" />
+                            <Box className={classes.quicklinks}>
+                                <a href='https://www.linkedin.com/company/dnd-solutionsindia' target='_blank'> <LinkedInIcon className='!w-10 !h-10 hover:text-blue-500' /></a>
+                            </Box>
+                        </Box>
 
                         {/* 
                         <Box>
@@ -69,7 +77,7 @@ const Footer = () => {
                     <Box className={classes.rowBottom}>
 
                         <Box className={''}>
-                            <p>Design By <span><b>Dhruv Computers</b></span> - 2024</p>
+                            <p className='mb-0 mt-3'>Design By <span><b>Dhruv Computers</b></span> - 2025</p>
                         </Box>
                         <Box>
 
@@ -83,6 +91,8 @@ const Footer = () => {
                         <KeyboardDoubleArrowUpIcon style={{ fontSize: 25, color: 'black' }} />
                     }
                 />
+
+                <Whatsapp />
             </Box>
         )
     }

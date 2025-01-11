@@ -4,6 +4,7 @@ import { Container1200 } from '../../components/shared/CustomContainer';
 import HeroSec from '../../components/shared/HeroSec';
 import { useStyles } from './contact.style';
 import ContactForm from './ContactForm';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Contact = () => {
   const classes = useStyles();
@@ -61,6 +62,10 @@ const Contact = () => {
                     <br />
                     Monday - Saturday: 9:30 AM to 6:00 PM
                   </p>
+
+                  <h2 className="text-2xl font-semibold mb-4">Connect with us</h2>
+                  <a href='https://www.linkedin.com/company/dnd-solutionsindia' target='_blank'> <LinkedInIcon className='!w-10 !h-10 hover:text-blue-500' /></a>
+
                 </div>
               </div>
 

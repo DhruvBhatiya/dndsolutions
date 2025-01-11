@@ -9,6 +9,7 @@ import DrawerRight from "../DrawerRight";
 import { Container10 } from "../shared/CustomContainer";
 import { useStyles } from "./header.style";
 import { adminLinks, menuListDesktop } from "./headerData";
+import "./header.css"
 // import logo from "../../assets/img/images/logo.png"
 const Header = () => {
   const classes = useStyles();
@@ -102,7 +103,7 @@ const Header = () => {
               </Box>
             )}
 
-            <ul className={currentPath === "/" ? classes.menuItems : `${classes.menuItems} ${classes.rightSideMenu}`}>
+            {/* <ul className={currentPath === "/" ? classes.menuItems : `${classes.menuItems} ${classes.rightSideMenu}`}>
               {menuListDesktop.map((item, index) => (
                 <li key={index} className="link">
                   {item.subMenu ? (
@@ -127,8 +128,8 @@ const Header = () => {
                               subItem.isBack
                                 ? () => handleBackClick(subItem.subMenu) // If it's a back item, go back
                                 : subItem.subMenu
-                                ? (e) => handleSubmenuOpen(e, subItem.subMenu)
-                                : handleMenuClose
+                                  ? (e) => handleSubmenuOpen(e, subItem.subMenu)
+                                  : handleMenuClose
                             }
                           >
                             {subItem.isBack ? (
@@ -148,7 +149,37 @@ const Header = () => {
                   )}
                 </li>
               ))}
-            </ul>
+            </ul> */}
+
+
+            <nav className="navbar">
+              <ul className="menu" >
+                {menuListDesktop.map((item, index) => (
+                  <li>
+                    <NavLink to={item.link}>{item.title}</NavLink>
+                    {item.subMenu && (
+                      <ul className="submenu">
+                        {item.subMenu.map((subItem, subIndex) => (
+                          <li>
+                            <NavLink to={subItem.link}>{subItem.title}</NavLink>
+                            {subItem.subMenu && (
+                              <ul className="submenu">
+                                {subItem.subMenu.map((subItem, subIndex) => (
+                                  <li>
+                                    <NavLink to={subItem.link}>{subItem.title}</NavLink>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+
+              </ul>
+            </nav>
 
             {token && (
               <Button onClick={handleLogout} color="inherit">Logout</Button>

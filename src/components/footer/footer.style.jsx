@@ -7,7 +7,8 @@ export const useStyles = makeStyles(() => ({
     },
     row: {
         "display": "grid", "gridGap": "60px",
-        "gridTemplateColumns": "repeat(3, 1fr)",
+        "gridTemplateColumns": "repeat(4, 1fr)",
+        borderBottom: '1px solid #fff',
 
         "& .footer-form": {
             marginBottom: '20px',

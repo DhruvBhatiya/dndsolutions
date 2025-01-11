@@ -33,6 +33,7 @@ import FloorCleaner from './pages/products/RegularCleaningAgents/FloorCleaner';
 import CustomProfileCleaner from './pages/products/CustomCleaningAgent/CustomProfileCleaner';
 import CarFoamWashCleaner from './pages/products/RegularCleaningAgents/CarFoamWashCleaner';
 import ScrollToTop from './components/shared/ScrollToTop';
+import NotFoundPage from './components/NotFoundPage';
 
 
 
@@ -80,7 +81,7 @@ function App() {
         </Route>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
+        {/* <Route path="/products" element={<Products />} /> */}
         {/* Products Starts */}
         {/* Organic Fertilizer  */}
         <Route path="/products/organic-liquid-fertilizer" element={<OrganicLiquidFertilizer__ />} />
@@ -108,7 +109,7 @@ function App() {
 
         <Route path="/media" element={<Media__ />} />
         <Route path="/contact" element={<ContactUs__ />} />
-
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </Router>

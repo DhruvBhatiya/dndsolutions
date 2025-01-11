@@ -237,6 +237,7 @@ export const useStyles = makeStyles(() => ({
     // Products 
     // =====================================
     productsSliderStyle: {
+        backgroundSize: 'cover',
         "backgroundColor": "#ffc000", "padding": "70px 0 90px",
         // "backgroundImage": `url(${process.env.REACT_APP_IMAGES_PATH}/images/bg/product-bg.webp)`,
         backgroundImage: `url(${productSlider})`,
